@@ -15,7 +15,6 @@ class Graph extends React.Component {
 
     loadVisualization(e) {
         e.preventDefault()
-        console.log('loading data')
         fetch('http://localhost:3000/visualization')
             .then(res => res.json())
             .then(
@@ -40,7 +39,6 @@ class Graph extends React.Component {
 
     render() {
         const { error, isLoaded, data } = this.state;
-        console.log(this.state)
         if (error) {
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
